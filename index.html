@@ -880,7 +880,7 @@ function typing(){ const m=el("div","msg bot typing"); m.appendChild(avatar()); 
 let sample=null, aiOn=false, aiState="off";
 const aiBadge=$('#ai'), aiToggle=$('#aiToggle');
 (async()=>{
-  try{ if(window.claude && typeof claude.use==="function"){ sample = await claude.use("sample"); } }catch(e){ sample=null; }
+  sample=null;
   if(sample){ aiState="ready"; aiToggle.hidden=false; try{ aiOn = localStorage.getItem("ai")==="1"; }catch(e){} aiToggle.checked=aiOn; }
   updateBadge();
 })();
